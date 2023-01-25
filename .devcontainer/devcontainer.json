@@ -1,0 +1,37 @@
+{
+	//コンテナ名
+	"name": "python_remote",
+	//指定するDockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	// devcontainer側のvscodeの設定一覧
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+		"files.insertFinalNewline": true,
+		"files.trimTrailingWhitespace": true,
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length=79 "
+		],
+		"python.linting.flake8CategorySeverity.E": "Warning",
+		"python.linting.flake8CategorySeverity.F": "Warning",
+		"python.sortImports.path": "/usr/local/bin/isort",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		}
+	},
+
+	// devcontainer側にインストールするvscodeの拡張機能一覧
+	"extensions": [
+		"usernamehw.errorlens",
+		"oderwat.indent-rainbow",
+		"shardulm94.trailing-spaces",
+		"njpwerner.autodocstring"
+	]
+}
